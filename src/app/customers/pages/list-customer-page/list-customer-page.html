@@ -1,0 +1,12 @@
+<container-list-component title="Modulo de Clientes" nameTable="Clientes" (clickCreate)="toggleCreate()">
+  <list-customer-component [data]="customerResource.value()" (clickedUpdate)="toggleUpdate($event)"></list-customer-component>
+</container-list-component>
+
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="modalDialogService.modalVisible" (onHide)="onDialogHide()">
+  <form-customer-component [form]="customerForm"></form-customer-component>
+  <div class="flex justify-end gap-2">
+    <p-button label="Cancel" severity="secondary" (click)="closeDialog()"/>
+    <p-button label="Save" (click)="save()"/>
+  </div>
+</p-dialog>
+

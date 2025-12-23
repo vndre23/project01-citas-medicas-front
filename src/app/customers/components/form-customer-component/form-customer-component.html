@@ -1,0 +1,39 @@
+<form [formGroup]="form()">
+  <div class="flex flex-col gap-3">
+    <div class="flex gap-2">
+      <div class="flex flex-col w-full">
+        <label for="typeDocument" class="text-surface-900 font-medium leading-normal">Tipo de documento</label>
+        <p-select [options]="[]" optionLabel="name" placeholder="Tipo de documento" class="w-full md:w-56" formControlName="typeDocument"/>
+        @if(isInvalid(form(), 'typeDocument')){
+          <small class="text-red-500">Ingrese un tipo de documento.</small>
+        }
+
+      </div>
+      <div class="flex flex-col w-full">
+        <label for="numberDocument" class="text-surface-900 font-medium leading-normal">Número de documento</label>
+        <input placeholder="Número de documento" pInputText formControlName="numberDocument"/>
+        @if(isInvalid(form(), 'numberDocument')){
+          <small class="text-red-500">Ingrese un numero de documento.</small>
+        }
+
+      </div>
+    </div>
+    <div class="flex flex-col w-full">
+      <label for="name" class="text-surface-900 font-medium leading-normal">Nombres</label>
+      <input placeholder="Nombres" pInputText formControlName="name"/>
+      @if(isInvalid(form(), 'name')){
+        <small class="text-red-500">Ingrese nombres.</small>
+      }
+
+    </div>
+    <div class="flex flex-col w-full">
+      <label for="lastname" class="text-surface-900 font-medium leading-normal">Apellidos</label>
+      <input placeholder="Apellidos" pInputText formControlName="lastname"/>
+      @if(isInvalid(form(), 'lastname')){
+        <small class="text-red-500">Ingrese apellidos.</small>
+      }
+
+    </div>
+  </div>
+
+</form>

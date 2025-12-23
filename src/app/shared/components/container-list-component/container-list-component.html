@@ -1,0 +1,11 @@
+<p-panel [header]="title()">
+  <ng-template #icons>
+    <p-button label="crear" (click)="onClickCreate()"></p-button>
+  </ng-template>
+  <p-fieldset [legend]="nameTable()">
+    <ng-content></ng-content>
+  </p-fieldset>
+</p-panel>
+
+
+

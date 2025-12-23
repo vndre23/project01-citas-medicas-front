@@ -1,0 +1,25 @@
+<!-- DESKTOP SIDEBAR -->
+<aside
+  class="hidden md:flex flex-col bg-slate-900 transition-all duration-300 h-full "
+  [class.w-72]="layout.sidebarOpen"
+  [class.w-0]="!layout.sidebarOpen"
+  [class.overflow-hidden]="!layout.sidebarOpen">
+
+  <menu-sidebar></menu-sidebar>
+
+</aside>
+
+<!-- MOBILE DRAWER -->
+<p-drawer
+  [(visible)]="layout.drawerVisible"
+  position="left"
+  class="md:hidden"
+  (onHide)="layout.closeMobile()">
+
+  <ng-template #headless>
+    <div class="flex flex-col h-full w-72 bg-white">
+      <menu-sidebar></menu-sidebar>
+    </div>
+  </ng-template>
+
+</p-drawer>

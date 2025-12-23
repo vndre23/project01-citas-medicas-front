@@ -1,0 +1,20 @@
+<div class="h-screen grid grid-rows-[auto_1fr] grid-cols-1">
+
+  <!-- NAVBAR (NO SE MUEVE NUNCA) -->
+  <navbar-component class="row-start-1 col-span-full"></navbar-component>
+
+  <!-- BODY -->
+  <div class="row-start-2 grid grid-cols-[auto_1fr]">
+
+    <!-- SIDEBAR -->
+    <sidebar-component>
+      <menu-sidebar></menu-sidebar>
+    </sidebar-component>
+
+    <!-- CONTENIDO -->
+    <main class="overflow-auto p-4 bg-surface-200">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+</div>
