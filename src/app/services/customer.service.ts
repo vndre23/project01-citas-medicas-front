@@ -28,4 +28,9 @@ export class CustomerService {
     return this.http
       .put<CustomerResponse>(`${baseUrl}/customers/${id}`, data);
   }
+
+  deleteCustomer(id:string) {
+    return this.http
+      .delete(`${baseUrl}/customers/${id}`);
+  }
 }

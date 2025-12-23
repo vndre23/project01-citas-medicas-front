@@ -1,5 +1,5 @@
 <container-list-component title="Modulo de Clientes" nameTable="Clientes" (clickCreate)="toggleCreate()">
-  <list-customer-component [data]="customerResource.value()" (clickedUpdate)="toggleUpdate($event)"></list-customer-component>
+  <list-customer-component [data]="customerResource.value()" (clickedUpdate)="toggleUpdate($event)" (clickedAcceptDelete)="clickedAcceptDelete($event)"></list-customer-component>
 </container-list-component>
 
 <p-dialog header="Edit Profile" [modal]="true" [(visible)]="modalDialogService.modalVisible" (onHide)="onDialogHide()">
@@ -9,4 +9,6 @@
     <p-button label="Save" (click)="save()"/>
   </div>
 </p-dialog>
+
+
 

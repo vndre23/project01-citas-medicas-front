@@ -25,7 +25,7 @@ export class ListCustomerPage {
   fb = inject(FormBuilder);
   customerForm = this.fb.group({
     id: [''],
-    typeDocument:[{}],
+    typeDocument:[null],
     numberDocument: ['', Validators.required],
     name: ['', Validators.required],
     lastname: ['', Validators.required],
@@ -50,6 +50,15 @@ export class ListCustomerPage {
     this.modalDialogService.toggleModal();
   }
 
+  clickedAcceptDelete(data: any) {
+    console.log(data);
+    this.customerService.deleteCustomer(data?.id)
+      .subscribe({
+        next: () => {
+          this.customerResource.reload();
+        }
+      });
+  }
   save() {
     if (this.customerForm.invalid) {
       this.customerForm.markAllAsTouched();
@@ -97,4 +106,8 @@ export class ListCustomerPage {
     this.customerForm.reset();
     this.modalDialogService.toggleModal();
   }
+
+
+
+
 }

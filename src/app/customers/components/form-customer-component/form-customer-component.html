@@ -3,10 +3,16 @@
     <div class="flex gap-2">
       <div class="flex flex-col w-full">
         <label for="typeDocument" class="text-surface-900 font-medium leading-normal">Tipo de documento</label>
-        <p-select [options]="[]" optionLabel="name" placeholder="Tipo de documento" class="w-full md:w-56" formControlName="typeDocument"/>
-        @if(isInvalid(form(), 'typeDocument')){
-          <small class="text-red-500">Ingrese un tipo de documento.</small>
+        @if (typeDocumentResource.isLoading()) {
+          <span>Cargando documentos...</span>
+        } @else {
+          <p-select
+            [options]="typeDocumentResource.value()"
+            optionLabel="name"
+            formControlName="typeDocument"
+          />
         }
+
 
       </div>
       <div class="flex flex-col w-full">

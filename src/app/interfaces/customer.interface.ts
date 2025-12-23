@@ -8,7 +8,7 @@ export interface CustomerResponse {
 
 export interface TypeDocument {
   id: string;
-  type: string;
+  name: string;
 }
 
 export interface CustomerRequest {
